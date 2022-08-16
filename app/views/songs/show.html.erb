@@ -1,0 +1,15 @@
+<h1>Song: <%= @song.name %></h1>
+<h2>Album: <%= @album.name %></h2>
+<h3><%= @song.lyrics %></h3>
+
+<p><%= button_to "Edit song", 
+                  edit_album_song_path(@album, @song), 
+                  method: :get %></p>
+
+<p><%= button_to "Delete Song", 
+                  album_song_path(@album, @song),
+                  method: :delete %></p>
+
+<p><%= button_to "Return to album", 
+                  album_path(@album), 
+                  method: :get %></p>
