@@ -13,9 +13,10 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
     if @album.save
+      flash[:notice] = "Album successfully added!"
       redirect_to albums_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -34,7 +35,7 @@ class AlbumsController < ApplicationController
     if @album.update(album_params)
       redirect_to albums_path
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
