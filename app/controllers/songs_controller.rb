@@ -11,7 +11,7 @@ class SongsController < ApplicationController
     if @song.save
       redirect_to album_path(@album)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -33,7 +33,7 @@ class SongsController < ApplicationController
       redirect_to album_path(@song.album)
     else
       @album = Album.find(params[:album_id])
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
