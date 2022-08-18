@@ -12,4 +12,9 @@ Song.destroy_all
     end
 end
 
-p "Created #{Album.count} albums and #{Song.count} songs"
+User.create!(email:"admin@gmail.com", password:"admin", admin:true)
+User.create!(email:"nonadmin@gmail.com", password:"nonadmin", admin:false)
+
+p "Created #{Album.count} albums, #{Song.count} songs and #{User.count} users."
+p "User Credentials for Admin: Email: admin@gmail.com, Password: password"
+p "User Credentials for Admin: Email: nonadmin@gmail.com, Password: password"

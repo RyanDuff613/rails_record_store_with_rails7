@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_17_230940) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_17_235415) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,6 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_17_230940) do
     t.string "email"
     t.string "password_hash"
     t.string "password_salt"
+    t.boolean "admin"
   end
 
   add_foreign_key "songs", "albums"

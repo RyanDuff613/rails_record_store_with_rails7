@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
-
+  before_action :authorize_admin, only: [:edit,:destroy]
+  before_action :authorize_user, except: [:index, :show]
   def index
     @albums = Album.all
     render :index

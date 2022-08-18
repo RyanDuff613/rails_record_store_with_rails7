@@ -1,4 +1,6 @@
 class SongsController < ApplicationController
+  before_action :authorize_admin, only: [:edit,:destroy]
+  before_action :authorize_user, except: [:index, :show, :new, :create]
   def new
     @album = Album.find(params[:album_id])
     @song = @album.songs.new
