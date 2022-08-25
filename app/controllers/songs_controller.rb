@@ -1,4 +1,8 @@
 class SongsController < ApplicationController
+  before_action :only => [:new, :edit, :delete] do
+    redirect_to new_user_session_path unless current_user && current_user.admin
+  end
+
   def new
     @album = Album.find(params[:album_id])
     @song = @album.songs.new

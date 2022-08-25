@@ -1,5 +1,7 @@
 class AlbumsController < ApplicationController
-  # skip_before_action :authenticate_user!, :only => [:index]
+  before_action :only => [:new, :edit, :delete] do
+    redirect_to new_user_session_path unless current_user && current_user.admin
+  end
 
   def index
     @albums = Album.all
