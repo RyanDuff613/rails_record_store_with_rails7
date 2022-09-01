@@ -1,6 +1,10 @@
 <h1><%= @album.name %></h1>
 <h3><%= @album.genre %></h3>
 
+<% if @album.album_cover_photo.attached? %>
+  <%= image_tag @album.album_cover_photo %>
+<% end %>
+
 <% if @album.songs.any? %>
   <h4>Here are the songs for this album:</h4>
 

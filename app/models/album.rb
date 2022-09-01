@@ -3,6 +3,7 @@ class Album < ApplicationRecord
   has_and_belongs_to_many :artists
   validates :name, presence: true
   validates_length_of :name, maximum: 100
+  has_one_attached :album_cover_photo
 
   before_save(:titleize_album)
 

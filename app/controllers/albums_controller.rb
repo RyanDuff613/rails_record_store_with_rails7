@@ -15,6 +15,7 @@ class AlbumsController < ApplicationController
 
   def create
     @album = Album.new(album_params)
+    @album.album_cover_photo.attach(params[:album][:album_cover_photo])
     if @album.save
       flash[:notice] = "Album successfully added!"
       redirect_to albums_path

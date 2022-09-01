@@ -1,3 +1,7 @@
 <h1>Edit Album</h1>
 
 <%= render "layouts/album_form" %>
+
+<p><%= button_to "Return to Albums Page", 
+                  albums_path,
+                  method: :get %></p>
